@@ -50,6 +50,12 @@ for($i = 0; $i -lt $rubies.Count; $i++) {
     $ruby = $rubies[$i]
     Write-Host "$($ruby.version)" -ForegroundColor Cyan
     Write-Host "ruby --version: $(cmd /c "$($ruby.install_path)\bin\ruby" --version)"
-    Write-Host "gem --version: $(cmd /c "$($ruby.install_path)\bin\gem" --version)"
-    Write-Host "bundler --version: $(cmd /c "$($ruby.install_path)\bin\bundler" --version)"
+    
+    $gem_version = (cmd /c "$($ruby.install_path)\bin\gem" --version);
+    Write-Host "gem --version: $gem_version"
+    if (-not $gem_version.contains($env:gem_version)) { throw "Wrong Gem version"; }
+    
+    $bundler_version = (cmd /c "$($ruby.install_path)\bin\bundler" --version)
+    Write-Host "bundler --version: $bundler_version"
+    if (-not $bundler_version.contains($env:bundler_version)) { throw "Wrong Bundler version"; }    
 }
