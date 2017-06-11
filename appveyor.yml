@@ -1,0 +1,5 @@
+test_script:
+- ps: $ErrorActionPreference = "Stop"
+- ps: .\test.ps1
+
+build: off
