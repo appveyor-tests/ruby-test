@@ -1,6 +1,6 @@
 environment:
-  bundler_version: 1.15.4
-  gem_version: 2.6.13
+  bundler_version: 1.16.0
+  gem_version: 2.7.2
 
 test_script:
 - ps: $ErrorActionPreference = "Stop"
