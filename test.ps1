@@ -36,13 +36,21 @@ $rubies = @(
         "install_path" = "C:\Ruby23-x64"
     }
     @{
-        "version" = "Ruby 2.4.2-2"
+        "version" = "Ruby 2.4.3-1"
         "install_path" = "C:\Ruby24"
     }
     @{
-        "version" = "Ruby 2.4.2-2 (x64)"
+        "version" = "Ruby 2.4.3-1 (x64)"
         "install_path" = "C:\Ruby24-x64"
     }
+    @{
+        "version" = "Ruby 2.5.0-1"
+        "install_path" = "C:\Ruby25"
+    }
+    @{
+        "version" = "Ruby 2.5.0-1 (x64)"
+        "install_path" = "C:\Ruby25-x64"
+    }    
 )
 
 # print summary
