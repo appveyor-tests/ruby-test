@@ -2,6 +2,7 @@ $rubies = @(
     @{
         "version" = "Ruby 1.9.3-p551"
         "install_path" = "C:\Ruby193"
+        "skip_gems_check" = $true
     }
     @{
         "version" = "Ruby 2.0.0-p648"
@@ -59,11 +60,13 @@ for($i = 0; $i -lt $rubies.Count; $i++) {
     Write-Host "$($ruby.version)" -ForegroundColor Cyan
     Write-Host "ruby --version: $(cmd /c "$($ruby.install_path)\bin\ruby" --version)"
     
-    $gem_version = (cmd /c "$($ruby.install_path)\bin\gem" --version);
-    Write-Host "gem --version: $gem_version"
-    if (-not $gem_version.contains($env:gem_version)) { throw "Wrong Gem version"; }
-    
-    $bundler_version = (cmd /c "$($ruby.install_path)\bin\bundle" --version)
-    Write-Host "bundle --version: $bundler_version"
-    if (-not $bundler_version.contains($env:bundler_version)) { throw "Wrong Bundler version"; }    
+    if(-not $ruby.skip_gems_check) {
+        $gem_version = (cmd /c "$($ruby.install_path)\bin\gem" --version);
+        Write-Host "gem --version: $gem_version"
+        if (-not $gem_version.contains($env:gem_version)) { throw "Wrong Gem version"; }
+
+        $bundler_version = (cmd /c "$($ruby.install_path)\bin\bundle" --version)
+        Write-Host "bundle --version: $bundler_version"
+        if (-not $bundler_version.contains($env:bundler_version)) { throw "Wrong Bundler version"; }
+     }
 }
