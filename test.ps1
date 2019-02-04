@@ -63,10 +63,10 @@ for($i = 0; $i -lt $rubies.Count; $i++) {
     if(-not $ruby.skip_gems_check) {
         $gem_version = (cmd /c "$($ruby.install_path)\bin\gem" --version);
         Write-Host "gem --version: $gem_version"
-        if (-not $gem_version.contains($env:gem_version)) { throw "Wrong Gem version"; }
+        #if (-not $gem_version.contains($env:gem_version)) { throw "Wrong Gem version"; }
 
         $bundler_version = (cmd /c "$($ruby.install_path)\bin\bundle" --version)
         Write-Host "bundle --version: $bundler_version"
-        if (-not $bundler_version.contains($env:bundler_version)) { throw "Wrong Bundler version"; }
+        #if (-not $bundler_version.contains($env:bundler_version)) { throw "Wrong Bundler version"; }
      }
 }
