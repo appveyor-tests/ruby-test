@@ -3,6 +3,7 @@ environment:
   gem_version: 2.7.8
 
 test_script:
+- set path=C:\Ruby23\bin;%path%
 - gem install bundler --force
 - ps: $ErrorActionPreference = "Stop"
 - ps: .\test.ps1
