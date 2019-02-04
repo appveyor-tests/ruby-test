@@ -51,7 +51,15 @@ $rubies = @(
     @{
         "version" = "Ruby 2.5.0-1 (x64)"
         "install_path" = "C:\Ruby25-x64"
-    }    
+    }
+    @{
+        "version" = "Ruby 2.6.1-1"
+        "install_path" = "C:\Ruby26"
+    }
+    @{
+        "version" = "Ruby 2.6.1-1 (x64)"
+        "install_path" = "C:\Ruby26-x64"
+    }       
 )
 
 # print summary
