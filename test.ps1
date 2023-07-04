@@ -69,6 +69,14 @@ $rubies = @(
         "install_path" = "C:\Ruby27-x64"
     } 
     @{
+        "version" = "Ruby 3.0.6-1"
+        "install_path" = "C:\Ruby30"
+    }
+    @{
+        "version" = "Ruby 3.0.6-1 (x64)"
+        "install_path" = "C:\Ruby30-x64"
+    } 
+    @{
         "version" = "Ruby 3.1.4-1"
         "install_path" = "C:\Ruby31"
     }
